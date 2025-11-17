@@ -1,65 +1,136 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+    <div className="min-h-screen bg-white font-sans">
+      {/* Header */}
+      <header className="fixed top-0 w-full bg-white/90 backdrop-blur z-50 border-b">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl font-black text-blue-600">KONGO</span>
+            <span className="text-purple-600 text-2xl">·</span>
+            <span className="text-purple-600 font-medium">TELEGRa</span>
+          </div>
+          <a href="#cta" className="text-purple-600 border border-purple-600 px-5 py-2 rounded-lg hover:bg-purple-50 transition">
+            Request Early Access
           </a>
         </div>
-      </main>
+      </header>
+
+      {/* Hero */}
+      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white text-center px-6">
+        <h1 className="text-5xl md:text-6xl font-black mb-6">Your Pharmacy Workflow Is Slowing You Down.</h1>
+        <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-10 opacity-90">
+          Most MedSpas & health brands lose time because pharmacies are hard to reach. CTRL fixes that — giving you instant access to licensed pharmacies across all 50 states.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#cta" className="bg-white text-blue-600 px-10 py-5 rounded-lg text-lg font-bold hover:bg-gray-100">Get Free Access</a>
+          <a href="#how" className="border-2 border-white px-10 py-5 rounded-lg text-lg font-bold hover:bg-white/20">See How It Works</a>
+        </div>
+        <p className="mt-6 text-sm opacity-80">Free for launch partners · HIPAA + API · No code UI</p>
+      </section>
+
+      {/* Problem cards */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">Why most clinics struggle with fulfillment</h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[{icon:"⏰",title:"Slow setup",text:"Integrations take weeks, delaying launches."},
+              {icon:"📦",title:"Stock issues",text:"Pharmacies go out of stock unexpectedly."},
+              {icon:"🚫",title:"Limited states",text:"Licensing barriers restrict your reach."},
+              {icon:"✉️",title:"Manual work",text:"Routing still happens by email or fax."}]
+              .map((c,i)=>
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-lg text-center">
+                <div className="text-5xl mb-4">{c.icon}</div>
+                <h3 className="font-bold text-xl mb-2">{c.title}</h3>
+                <p className="text-gray-600">{c.text}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* 3 steps */}
+      <section id="how" className="py-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-12">CTRL fixes that in 3 steps</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[{num:"1",title:"Connect once",text:"One secure integration to access many licensed pharmacies."},
+              {num:"2",title:"Route automatically",text:"Smart routing sends prescriptions to the fastest, in-stock partner."},
+              {num:"3",title:"Deliver faster",text:"Patients receive medications quickly — without manual chasing."}]
+              .map((s,i)=>
+              <div key={i} className="bg-gradient-to-b from-blue-50 to-white p-10 rounded-3xl shadow-xl">
+                <div className="text-6xl font-black text-blue-600 mb-4">{s.num}</div>
+                <h3 className="text-2xl font-bold mb-4">{s.title}</h3>
+                <p className="text-gray-700">{s.text}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Value grid + Route table + Badges */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Why CTRL creates value</h2>
+          <p className="text-xl text-gray-600 mb-12">Built to replace one-off pharmacy integrations with a scalable, compliant network.</p>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {["One API, many pharmacies","Built-in financials","Smart routing","Real-time pricing","Observability","Security & compliance"]
+              .map((t,i)=><div key={i} className="bg-white p-8 rounded-2xl shadow">{t}</div>)}
+          </div>
+          <div className="bg-white p-10 rounded-3xl shadow-xl inline-block">
+            <h3 className="text-2xl font-bold mb-6">Route by what matters</h3>
+            <div className="grid grid-cols-4 gap-8 text-center">
+              {["Cost","Speed","Availability","Coverage"].map((x,i)=>
+                <div key={i}><div className="font-bold">{x}</div><div className="text-sm text-gray-600">
+                  {i===0?"Lowest landed cost":i===1?"Target ship window":i===2?"Auto-skip stockouts":"State-by-state rules"}</div></div>
+              )}
+            </div>
+          </div>
+          <div className="flex justify-center gap-6 mt-10">
+            <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">HIPAA Compliant</span>
+            <span className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">Telegra Verified Partner</span>
+            <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">Secure API Infrastructure</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">What early partners are saying</h2>
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {quote:"“CTRL removed the weeks-long headache of setting up a pharmacy connection. We were prescribing within hours, not weeks.”",author:"— Dr. Maria Torres, Medical Director, Radiant MedSpa"},
+              {quote:"“Integration was almost effortless. CTRL’s smart routing saved us during a product launch when our main partner ran out of stock.”",author:"— Alex Nguyen, Founder, Glow Health"},
+              {quote:"“We love that CTRL gives us access to multiple licensed pharmacies with one integration — compliance and speed in one place.”",author:"— Sarah Patel, Owner, Luxe Aesthetics"}
+            ].map((t,i)=>
+              <div key={i} className="bg-white p-10 rounded-3xl shadow-xl">
+                <p className="italic text-lg mb-6">“{t.quote}”</p>
+                <p className="font-semibold">{t.author}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section id="cta" className="py-20 bg-gradient-to-r from-purple-700 to-indigo-800 text-white text-center px-6">
+        <h2 className="text-5xl font-black mb-6">Request Early Access — Free for Launch Partners</h2>
+        <p className="text-2xl mb-10">Join top MedSpas and health brands using CTRL to prescribe faster, smarter, and with less effort.</p>
+        <a href="#" className="inline-block bg-white text-purple-700 px-12 py-6 rounded-xl text-2xl font-bold hover:bg-gray-100">
+          Join Free This Month
+        </a>
+        <p className="mt-6 text-lg opacity-90">Limited launch spots available — offer ends soon</p>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 bg-gray-900 text-white text-center">
+        <div className="flex justify-center items-center gap-3 mb-4">
+          <span className="text-2xl font-black text-blue-400">KONGO</span>
+          <span className="text-purple-400">·</span>
+          <span className="text-purple-400">TELEGRa</span>
+        </div>
+        <p className="text-sm">© 2025 Kongo Health. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
