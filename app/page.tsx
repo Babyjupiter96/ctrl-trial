@@ -33,7 +33,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Why most clinics struggle with fulfillment</h2>
           <div className="grid md:grid-cols-4 gap-8">
-            {[{icon:"Clock",title:"Slow setup",text:"Integrations take weeks, delaying launches."},
+            {[{,title:"Slow setup",text:"Integrations take weeks, delaying launches."},
               {icon:"Box",title:"Stock issues",text:"Pharmacies go out of stock unexpectedly."},
               {icon:"Map",title:"Limited states",text:"Licensing barriers restrict your reach."},
               {icon:"Envelope",title:"Manual work",text:"Routing still happens by email or fax."}]
@@ -131,7 +131,7 @@ export default function Home() {
         <div className="flex justify-center items-center gap-3 mb-4">
           <span className="text-2xl font-black text-blue-400">KONGO</span>
           <span className="text-purple-400">·</span>
-          <span className="text-purple-400">TELEGRa</span>
+          <span className="text-purple-400">TELEGRA</span>
         </div>
         <p className="text-sm">© 2025 Kongo Health. All rights reserved.</p>
       </footer>
