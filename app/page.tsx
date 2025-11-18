@@ -33,10 +33,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Why most clinics struggle with fulfillment</h2>
           <div className="grid md:grid-cols-4 gap-8">
-            {[{,title:"Slow setup",text:"Integrations take weeks, delaying launches."},
-              {icon:"Box",title:"Stock issues",text:"Pharmacies go out of stock unexpectedly."},
-              {icon:"Map",title:"Limited states",text:"Licensing barriers restrict your reach."},
-              {icon:"Envelope",title:"Manual work",text:"Routing still happens by email or fax."}]
+            {[{title:"Slow setup",text:"Integrations take weeks, delaying launches."},
+              {title:"Stock issues",text:"Pharmacies go out of stock unexpectedly."},
+              {title:"Limited states",text:"Licensing barriers restrict your reach."},
+              {title:"Manual work",text:"Routing still happens by email or fax."}]
               .map((c,i)=>
               <div key={i} className="bg-white p-8 rounded-2xl shadow-lg text-center">
                 <div className="text-5xl mb-4">{c.icon}</div>
