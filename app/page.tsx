@@ -7,7 +7,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <span className="text-2xl font-black text-blue-600">KONGO</span>
             <span className="text-purple-600 text-2xl">·</span>
-            <span className="text-purple-600 font-medium">TELEGRa</span>
+            <span className="text-purple-600 font-medium">TELEGRA</span>
           </div>
           <a href="#cta" className="text-purple-600 border border-purple-600 px-5 py-2 rounded-lg hover:bg-purple-50 transition font-medium">
             Request Early Access
